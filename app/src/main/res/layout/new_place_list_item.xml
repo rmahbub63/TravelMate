@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp">
+
+            <ImageView
+                android:id="@+id/full_image"
+                android:layout_width="180dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tour_plan_logo"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:maxWidth="180dp"
+                android:layout_below="@id/full_image"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="1dp"
+                android:text="A Guide To Rocky Mountain Vacations"
+                android:textColor="@color/cardview_dark_background"/>
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:layout_below="@id/name_text_view"/>
+
+            <TextView
+                android:id="@+id/review_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_text_view"
+                android:layout_toRightOf="@id/ratingBar"
+                android:layout_alignTop="@id/ratingBar"
+                android:textSize="15sp"
+                android:text="100 Reviews"
+                android:layout_alignRight="@id/full_image"
+                android:gravity="end" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
