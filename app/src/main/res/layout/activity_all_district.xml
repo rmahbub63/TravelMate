@@ -1,43 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    tools:context="com.example.mahbub.travelmateui.AllDistrictActivity"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    tools:context="com.example.mahbub.travelmateui.AllDistrictActivity">
 
     <LinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/linear_bg"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_weight="1">
     </LinearLayout>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
-        card_view:cardCornerRadius="20dp"
-        android:id="@+id/cardViewSearch">
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter a place Name"
-            android:drawableRight="@drawable/search_icon"
-            android:background="@null"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="6dp"/>
-
-    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/vertical_recycler_view"
@@ -45,8 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/cardViewSearch"
-        android:layout_marginTop="27dp">
+        android:layout_marginTop="10dp"
+        android:layout_weight="50">
+
     </android.support.v7.widget.RecyclerView>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/button_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="District View"
+        android:textColor="@android:color/white"
+        android:layout_weight="1"
+        style="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+</LinearLayout>
