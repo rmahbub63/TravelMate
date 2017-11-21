@@ -28,7 +28,7 @@ public class DivisionListAdapter extends RecyclerView.Adapter<DivisionListAdapte
     @Override
     public DivisionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.division_list_item,parent, false);
+        View view = inflater.inflate(R.layout.district_list_item,parent, false);
         return new DivisionViewHolder(view);
     }
 

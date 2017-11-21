@@ -10,13 +10,13 @@ import com.example.mahbub.travelmateui.model.DivisionModel;
 
 import java.util.ArrayList;
 
-public class AllDivisionActivity extends AppCompatActivity {
+public class AllDistrictActivity extends AppCompatActivity {
 
     ArrayList<DivisionModel> divisions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_division);
+        setContentView(R.layout.activity_all_district);
 
         divisions = new ArrayList<>();
         divisions.add(new DivisionModel(R.drawable.ahsan_monjil, "Dhaka"));

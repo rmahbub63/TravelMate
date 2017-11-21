@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allDivisionClickAction(View view) {
-        Intent intent = new Intent(this, AllDivisionActivity.class);
+        Intent intent = new Intent(this, AllDistrictActivity.class);
         startActivity(intent);
     }
 }

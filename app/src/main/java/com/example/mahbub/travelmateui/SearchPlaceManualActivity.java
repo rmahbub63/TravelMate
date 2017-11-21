@@ -27,15 +27,15 @@ public class SearchPlaceManualActivity extends AppCompatActivity {
         popularList = new ArrayList<>();
         newList = new ArrayList<>();
 
-        popularList.add(new PopularPlacesModel(R.drawable.tour_plan_logo, "Bangladesh", 4.5f, "220 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.tour_plan_logo, "Dhaka", 4.5f, "120 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.tour_plan_logo, "Chandpur", 5.0f, "200 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.tour_plan_logo, "Khulna", 4.5f, "210 Review"));
+        popularList.add(new PopularPlacesModel(R.drawable.sajek, "Sajek Valley", 4.9f, "220 Review"));
+        popularList.add(new PopularPlacesModel(R.drawable.coxs_bazar, "Cox's Bazar Sea Beach", 4.8f, "120 Review"));
+        popularList.add(new PopularPlacesModel(R.drawable.jaflong, "Jaflong", 4.78f, "200 Review"));
+        popularList.add(new PopularPlacesModel(R.drawable.lalbag_kella, "Lalbag Kella", 4.6f, "210 Review"));
 
-        newList.add(new NewPlacesModel(R.drawable.tour_plan_logo, "Barishal", 4.5f, "220 Review"));
-        newList.add(new NewPlacesModel(R.drawable.tour_plan_logo, "Dhaka", 4.5f, "120 Review"));
-        newList.add(new NewPlacesModel(R.drawable.tour_plan_logo, "Chandpur", 5.0f, "200 Review"));
-        newList.add(new NewPlacesModel(R.drawable.tour_plan_logo, "Khulna", 4.5f, "210 Review"));
+        newList.add(new NewPlacesModel(R.drawable.moinot_ghat, "Moinot Ghat", 4.5f, "5 Review"));
+        newList.add(new NewPlacesModel(R.drawable.napittachara_jhorna, "Napittachara Jhorna", 4.5f, "3 Review"));
+        newList.add(new NewPlacesModel(R.drawable.chandpur_boro_stattion, "Chandpur Boro Station", 5.0f, "2 Review"));
+        newList.add(new NewPlacesModel(R.drawable.ratargul, "Ratargul Swamp Forest", 4.5f, "10 Review"));
 
         recyclerViewPopularPlaces = findViewById(R.id.horizontal_recycler_view);
         recyclerViewPopularPlaces.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
