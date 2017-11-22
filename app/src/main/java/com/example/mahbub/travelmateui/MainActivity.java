@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
     }
+    public void main(){
+
+    }
 
     public void searchClickAction(View view) {
         Intent intent = new Intent(this, SearchPlaceManualActivity.class);
