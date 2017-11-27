@@ -8,7 +8,6 @@
         android:id="@+id/imageViewEmail"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/email"
         android:layout_marginTop="60dp"
         />
 
@@ -24,7 +23,6 @@
         android:id="@+id/imageViewPassword"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/password"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/imageViewEmail"/>
 

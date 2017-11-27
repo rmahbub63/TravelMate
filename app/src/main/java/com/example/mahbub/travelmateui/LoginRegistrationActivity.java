@@ -14,8 +14,6 @@ public class LoginRegistrationActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
 
-    Button buttonLogin;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
