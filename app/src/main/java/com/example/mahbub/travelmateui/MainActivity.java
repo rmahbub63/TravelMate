@@ -9,15 +9,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
-import com.example.mahbub.travelmateui.fragment.LogIn;
-import com.example.mahbub.travelmateui.fragment.SignUp;
+import com.example.mahbub.travelmateui.model.LoginModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    ViewPager viewPager;
-    TabLayout tabLayout;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,39 +26,23 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish(){
-                //set the new Content of your activity
-               MainActivity.this.setContentView(R.layout.activity_registration);
-                //toolbar = findViewById(R.id.toolbarSelectOption);
-                //setSupportActionBar(toolbar);
-                //getSupportActionBar().setTitle("Select an option");
-                tabLayout = findViewById(R.id.tablayout);
-                viewPager = findViewById(R.id.viewPager);
-
-                setDataToViewPager();
-                tabLayout.setupWithViewPager(viewPager);
+                if (LoginModel.isLogin) {
+                    // If user is logged in then directly call the MainOptionSelectActivity
+                    Intent intent = new Intent(MainActivity.this, MainOptionSelectActivity.class);
+                    startActivity(intent);
+                } else {
+                    // For Showing the login/registration UI first
+                    // We have to call the login/registration activity first by intent
+                    Intent intent = new Intent(MainActivity.this, LoginRegistrationActivity.class);
+                    startActivity(intent);
+                }
             }
-
-            private void setDataToViewPager() {
-                ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-                adapter.addFragment(new LogIn(),"Log In");
-                adapter.addFragment(new SignUp(),"Sign Up");
-                viewPager.setAdapter(adapter);
-            }
-
         }.start();
     }
-    public void main(){
-        //hello
 
-    }
-
-    public void searchClickAction(View view) {
-        Intent intent = new Intent(this, SearchPlaceManualActivity.class);
-        startActivity(intent);
-    }
-
-    public void allDivisionClickAction(View view) {
-        Intent intent = new Intent(this, AllDistrictActivity.class);
-        startActivity(intent);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

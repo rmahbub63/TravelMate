@@ -12,7 +12,7 @@ import com.example.mahbub.travelmateui.R;
  * Created by SHAJJAD on 27-Nov-17.
  */
 
-public class SignUp extends Fragment {
+public class SignUpFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle){
         return inflater.inflate(R.layout.activity_signup,null);

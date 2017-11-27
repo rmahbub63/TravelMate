@@ -41,7 +41,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -50,7 +50,6 @@
         android:textColor="#ffffff"
         style="@android:style/TextAppearance.Medium"
         android:background="#008080"
-        android:layout_below="@+id/editTextPassword"
-        android:onClick="loginClickAction"/>
+        android:layout_below="@+id/editTextPassword"/>
 
 </RelativeLayout>
