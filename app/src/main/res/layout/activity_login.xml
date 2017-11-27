@@ -44,12 +44,24 @@
         android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Continue"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:textColor="#ffffff"
         style="@android:style/TextAppearance.Medium"
         android:background="#008080"
         android:layout_below="@+id/editTextPassword"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+         />
 
 </RelativeLayout>

@@ -73,25 +73,26 @@
 
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/buttonSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:onClick="saveData"
-        android:layout_alignBottom="@+id/buttonClear"
+        android:onClick="signUp"
+        android:layout_alignBottom="@+id/buttonGuest"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginEnd="10dp"
         android:textColor="#ffffff"
         style="@android:style/TextAppearance.Medium"
-        android:background="#008080"/>
+        android:background="#008080"
+        />
     <Button
-        android:id="@+id/buttonClear"
+        android:id="@+id/buttonGuest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guest"
-        android:layout_toRightOf="@+id/buttonSave"
+        android:layout_toRightOf="@+id/buttonSignup"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/editTextPhone"
         android:textColor="#ffffff"
