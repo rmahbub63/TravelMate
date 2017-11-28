@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.mahbub.travelmateui.LoginRegistrationActivity;
 import com.example.mahbub.travelmateui.MainOptionSelectActivity;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.model.LoginModel;
@@ -23,8 +24,7 @@ import com.facebook.login.widget.LoginButton;
  */
 
 public class LogInFragment extends  Fragment {
-    LoginButton login_button;
-    CallbackManager callbackManager;
+    LoginButton buttonFbLogin;
     private Button buttonLogin;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle){
@@ -42,35 +42,29 @@ public class LogInFragment extends  Fragment {
             }
         });
         //facebook login
-        login_button=mainView.findViewById(R.id.login_button);
-        callbackManager = CallbackManager.Factory.create();
+        buttonFbLogin = mainView.findViewById(R.id.button_fb_login);
 
-        login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        buttonFbLogin.registerCallback(LoginRegistrationActivity.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
                 Toast.makeText(getContext(),"Success",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getContext(),MainOptionSelectActivity.class);
                 startActivity(intent);
-
             }
 
             @Override
             public void onCancel() {
                 // App code
+                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onError(FacebookException exception) {
                 // App code
+                Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
             }
         });
         return mainView;
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-    }
-
 }
