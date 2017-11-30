@@ -11,8 +11,10 @@ import java.util.ArrayList;
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
+
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     ArrayList<String> tabTitleList = new ArrayList<>();
+
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -34,6 +36,5 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public void addFragment(Fragment fragment,String title){
         fragmentArrayList.add(fragment);
         tabTitleList.add(title);
-
     }
 }

@@ -60,9 +60,7 @@
                         card_view:cardCornerRadius="4dp"
                         card_view:cardBackgroundColor="@android:color/white"
                         card_view:cardElevation="4dp"
-                        card_view:cardUseCompatPadding="true"
-                        android:onClick="searchClickAction"
-                        tools:ignore="OnClick">
+                        card_view:cardUseCompatPadding="true">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -84,14 +82,12 @@
                         android:layout_alignBottom="@id/card_view_search_place"
                         card_view:cardBackgroundColor="@android:color/white"
                         card_view:cardElevation="4dp"
-                        card_view:cardUseCompatPadding="true"
-                        android:onClick="allDivisionClickAction"
-                        tools:ignore="OnClick">
+                        card_view:cardUseCompatPadding="true">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="All Division"
+                            android:text="Explore Places"
                             android:layout_gravity="center"
                             android:textAlignment="center"
                             android:drawableTop="@drawable/all_division"/>

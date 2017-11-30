@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewName"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewName"
+        android:hint="Enter your display name"
+        android:inputType="text"
+        android:layout_alignBottom="@+id/imageViewName"/>
+
+    <ImageView
+        android:id="@+id/imageViewEmail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageViewName"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewEmail"
+        android:hint="Enter email here"
+        android:inputType="textEmailAddress"
+        android:layout_alignBottom="@+id/imageViewEmail"/>
+
+    <ImageView
+        android:id="@+id/imageViewPassword"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageViewEmail"/>
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewEmail"
+        android:hint="Enter your password"
+        android:inputType="textEmailAddress"
+        android:layout_alignBottom="@+id/imageViewPassword"/>
+
+    <Button
+        android:id="@+id/buttonSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:onClick="saveData"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editTextPassword"
+        android:textColor="@color/custom_text_color"
+        style="@android:style/TextAppearance.Medium"
+        android:background="@color/button_background"/>
+
+</RelativeLayout>

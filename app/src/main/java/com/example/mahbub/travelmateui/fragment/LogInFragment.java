@@ -8,12 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.example.mahbub.travelmateui.LoginRegistrationActivity;
+import com.example.mahbub.travelmateui.MainActivity;
 import com.example.mahbub.travelmateui.MainOptionSelectActivity;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.model.LoginModel;
-import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
@@ -37,7 +36,7 @@ public class LogInFragment extends  Fragment {
             @Override
             public void onClick(View view) {
                 LoginModel.isLogin = true;
-                Intent intent = new Intent(getContext(), MainOptionSelectActivity.class);
+                Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -52,13 +51,11 @@ public class LogInFragment extends  Fragment {
                 Intent intent = new Intent(getContext(),MainOptionSelectActivity.class);
                 startActivity(intent);
             }
-
             @Override
             public void onCancel() {
                 // App code
                 Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG).show();
             }
-
             @Override
             public void onError(FacebookException exception) {
                 // App code

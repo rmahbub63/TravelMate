@@ -5,7 +5,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
 import com.example.mahbub.travelmateui.fragment.LogInFragment;
@@ -20,7 +19,7 @@ public class LoginRegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.fragment_registration_login_registration);
         
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewPager);
