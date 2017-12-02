@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.mahbub.travelmateui.LoginRegistrationActivity;
-import com.example.mahbub.travelmateui.MainOptionSelectActivity;
 import com.example.mahbub.travelmateui.R;
 
 /**
@@ -20,8 +19,8 @@ public class SignUpFragment extends Fragment {
     private Button buttonSignup,buttonGuest;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle){
-        View mainView = inflater.inflate(R.layout.fragment_signup_login_registration,null);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle){
+        View mainView = inflater.inflate(R.layout.fragment_signup_login_registration, container, false);
 
 
         buttonSignup = mainView.findViewById(R.id.buttonSignup);

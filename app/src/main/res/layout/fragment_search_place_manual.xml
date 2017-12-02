@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
+    tools:context="com.example.mahbub.travelmateui.fragment.SearchPlaceManualFragment"
+    android:background="@color/custom_theme_color"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
