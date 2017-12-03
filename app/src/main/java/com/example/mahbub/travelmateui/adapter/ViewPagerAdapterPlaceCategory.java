@@ -16,7 +16,7 @@ public class ViewPagerAdapterPlaceCategory extends FragmentPagerAdapter {
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     ArrayList<String> tabTitleList = new ArrayList<>();
 
-
+///new
     public ViewPagerAdapterPlaceCategory(FragmentManager fm) {
         super(fm);
     }
