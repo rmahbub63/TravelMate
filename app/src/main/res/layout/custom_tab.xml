@@ -6,4 +6,5 @@
     android:id="@+id/tab"
     android:textSize="14sp"
     android:textAlignment="center"
+    android:textColor="@color/button_background"
     android:fontFamily="@string/font_fontFamily_medium"/>

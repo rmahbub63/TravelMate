@@ -1,5 +1,6 @@
 package com.example.mahbub.travelmateui.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ public class SearchPlaceManualFragment extends RootFragment{
 
     RecyclerView recyclerViewPopularPlaces;
     RecyclerView recyclerViewNewPlaces;
+
     ArrayList<PopularPlacesModel> popularList;
     ArrayList<NewPlacesModel> newList;
 
