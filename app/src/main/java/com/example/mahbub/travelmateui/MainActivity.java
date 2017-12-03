@@ -9,9 +9,6 @@ import com.example.mahbub.travelmateui.fragment.MainHelperFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-//    TabLayout tabLayout;
-//    ViewPager viewPager;
-
     private MainHelperFragment mainHelperFragment;
 
     @Override
@@ -30,46 +27,7 @@ public class MainActivity extends AppCompatActivity {
             // and getting the reference
             mainHelperFragment = (MainHelperFragment) getSupportFragmentManager().getFragments().get(0);
         }
-
-//        tabLayout = findViewById(R.id.tablayout_main);
-//        viewPager = findViewById(R.id.viewPager_main);
-
-
-//        setDataToViewPager();
-//        tabLayout.setupWithViewPager(viewPager);
-//        setupTabIcons();
     }
-
-//    private void setDataToViewPager() {
-//        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-//        adapter.addFragment (new HomeFragment(),"Home");
-//        adapter.addFragment(new MyPlansFragment(),"My Plans");
-//        adapter.addFragment(new SavedPlacesFragment(),"Saved Place");
-//        adapter.addFragment(new MeProfileFragment(),"My Profile");
-//        viewPager.setAdapter(adapter);
-//    }
-
-//    private void setupTabIcons() {
-//        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-//        tabOne.setText("Home");
-//        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.home_main, 0, 0);
-//        tabLayout.getTabAt(0).setCustomView(tabOne);
-//
-//        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-//        tabTwo.setText("My Plans");
-//        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_plans_main, 0, 0);
-//        tabLayout.getTabAt(1).setCustomView(tabTwo);
-//
-//        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-//        tabThree.setText("Saved Place");
-//        tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.saved_places_main, 0, 0);
-//        tabLayout.getTabAt(2).setCustomView(tabThree);
-//
-//        TextView tabFour = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-//        tabFour.setText("My Profile");
-//        tabFour.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_profile_main, 0, 0);
-//        tabLayout.getTabAt(3).setCustomView(tabFour);
-//    }
 
     private void initScreen() {
         // Creating the ViewPager container fragment once
@@ -99,11 +57,9 @@ public class MainActivity extends AppCompatActivity {
         if (!mainHelperFragment.onBackPressed()) {
             // container Fragment or its associates couldn't handle the back pressed task
             // delegating the task to super class
-//            Toast.makeText(MainActivity.this, "If Called in main acvitity onBackPressed", Toast.LENGTH_SHORT).show();
             super.onBackPressed();
 
         } else {
-//            Toast.makeText(MainActivity.this, "else Called in main acvitity onBackPressed", Toast.LENGTH_SHORT).show();
             // carousel handled the back pressed task
             // do not call super
         }

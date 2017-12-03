@@ -7,4 +7,5 @@
     <color name="custom_text_color">#FAFFFF</color>
     <color name="button_background">#008080</color>
     <color name="colortab">#99daff</color>
+    <color name="black">#000000</color>
 </resources>

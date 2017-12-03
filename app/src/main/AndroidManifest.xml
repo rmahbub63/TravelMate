@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/tour_plan_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -22,7 +23,6 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
@@ -31,11 +31,9 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LauncherSplashActivity"
             android:theme="@style/SplashTheme">
@@ -45,15 +43,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".LoginRegistrationActivity"></activity>
-
-        <activity
-            android:name=".SearchPlaceManualActivity"
-            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".LoginRegistrationActivity" />
         <activity android:name=".AllDistrictActivity" />
-        <activity android:name=".MainOptionSelectActivity" />
-
+        <activity android:name=".ShowSelectedPlaceActivity"></activity>
     </application>
 
 </manifest>

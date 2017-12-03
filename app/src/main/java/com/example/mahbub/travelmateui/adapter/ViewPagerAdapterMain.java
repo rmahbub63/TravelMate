@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 /**
- * Created by SHAJJAD on 27-Nov-17.
+ * Created by MAHBUB on 01-Dec-17
  */
 
 public class ViewPagerAdapterMain extends FragmentPagerAdapter {

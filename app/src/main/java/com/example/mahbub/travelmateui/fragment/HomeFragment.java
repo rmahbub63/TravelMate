@@ -34,8 +34,7 @@ public class HomeFragment extends RootFragment{
             SearchPlaceManualFragment searchPlaceManualFragment = new SearchPlaceManualFragment();
             FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
 
-
-            transaction.replace(R.id.home_fragment, searchPlaceManualFragment);
+            transaction.replace(R.id.fragment_main, searchPlaceManualFragment);
             // Store the Fragment in stack
             transaction.addToBackStack(null);
             transaction.commit();
