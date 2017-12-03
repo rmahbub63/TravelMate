@@ -96,6 +96,7 @@
                     android:layout_below="@id/linear_layout_two_item">
 
                     <android.support.v7.widget.CardView
+                        android:id="@+id/makeTourPlan"
                         android:layout_width="match_parent"
                         android:layout_height="160dp"
                         card_view:cardCornerRadius="4dp"

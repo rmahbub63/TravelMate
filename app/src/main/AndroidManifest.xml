@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/tour_plan_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan" />
 
         <meta-data
@@ -31,6 +32,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
@@ -45,7 +47,8 @@
         </activity>
         <activity android:name=".LoginRegistrationActivity" />
         <activity android:name=".AllDistrictActivity" />
-        <activity android:name=".ShowSelectedPlaceActivity"></activity>
+        <activity android:name=".ShowSelectedPlaceActivity" />
+        <activity android:name=".MyTourPlan"></activity>
     </application>
 
 </manifest>

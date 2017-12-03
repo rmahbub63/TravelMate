@@ -1,11 +1,14 @@
 package com.example.mahbub.travelmateui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.mahbub.travelmateui.MyTourPlan;
 import com.example.mahbub.travelmateui.R;
 
 /**
@@ -14,12 +17,13 @@ import com.example.mahbub.travelmateui.R;
 
 public class HomeFragment extends RootFragment{
 
-    CardView searchPlace, explorePlace;
+    CardView searchPlace,makeTourPlan, explorePlace;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View mainView = inflater.inflate(R.layout.fragment_home, container, false);
 
         searchPlace = mainView.findViewById(R.id.card_view_search_place);
+        makeTourPlan = mainView.findViewById(R.id.makeTourPlan);
 
         searchPlace.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +31,14 @@ public class HomeFragment extends RootFragment{
                 enterNextFragment();
             }
         });
+        //shajjad the failure
+//        makeTourPlan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), MyTourPlan.class);
+//                startActivity(intent);
+//            }
+//        });
         return mainView;
     }
 
