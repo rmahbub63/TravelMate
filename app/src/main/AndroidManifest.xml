@@ -48,7 +48,8 @@
         <activity android:name=".LoginRegistrationActivity" />
         <activity android:name=".AllDistrictActivity" />
         <activity android:name=".ShowSelectedPlaceActivity" />
-        <activity android:name=".MyTourPlan"></activity>
+        <activity android:name=".MyTourPlan" />
+        <activity android:name=".MyTourPlanNext"></activity>
     </application>
 
 </manifest>
