@@ -1,6 +1,5 @@
 package com.example.mahbub.travelmateui.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +10,7 @@ import android.view.ViewGroup;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.adapter.NewPlaceListAdapter;
 import com.example.mahbub.travelmateui.adapter.PopularPlaceListAdapter;
+import com.example.mahbub.travelmateui.fragment.main_fragments.RootFragment;
 import com.example.mahbub.travelmateui.model.NewPlacesModel;
 import com.example.mahbub.travelmateui.model.PopularPlacesModel;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * Created by MAHBUB on 01-Dec-17.
  */
 
-public class SearchPlaceManualFragment extends RootFragment{
+public class SearchPlaceManualFragment extends RootFragment {
 
     RecyclerView recyclerViewPopularPlaces;
     RecyclerView recyclerViewNewPlaces;

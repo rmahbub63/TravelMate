@@ -1,19 +1,16 @@
 package com.example.mahbub.travelmateui;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
-import com.example.mahbub.travelmateui.fragment.MainHelperFragment;
-import com.example.mahbub.travelmateui.fragment.MeProfileFragment;
-import com.example.mahbub.travelmateui.fragment.MyPlansFragment;
-import com.example.mahbub.travelmateui.fragment.SavedPlacesFragment;
+import com.example.mahbub.travelmateui.fragment.main_fragments.MeProfileFragment;
+import com.example.mahbub.travelmateui.fragment.main_fragments.MyPlansFragment;
+import com.example.mahbub.travelmateui.fragment.main_fragments.SavedPlacesFragment;
 import com.example.mahbub.travelmateui.fragment.ShowSelectedPlaceFragment;
 
 public class ShowSelectedPlaceActivity extends AppCompatActivity {

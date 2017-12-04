@@ -13,7 +13,6 @@ public class MyTourPlan extends AppCompatActivity {
         //back button in the toolbar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
      //operation of back button
     @Override

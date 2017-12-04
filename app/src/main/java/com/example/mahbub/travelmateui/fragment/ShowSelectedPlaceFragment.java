@@ -7,15 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.ShowSelectedPlaceActivity;
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
+import com.example.mahbub.travelmateui.fragment.main_fragments.RootFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.AcomodationFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.BestSeasonFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.CategoryFragment;
@@ -28,7 +27,7 @@ import com.example.mahbub.travelmateui.fragment.selected_place_fragments.WayToGo
  * Created by MAHBUB on 01-Dec-17.
  */
 
-public class ShowSelectedPlaceFragment extends RootFragment{
+public class ShowSelectedPlaceFragment extends RootFragment {
 
     Toolbar toolbar;
     TabLayout tabLayout;

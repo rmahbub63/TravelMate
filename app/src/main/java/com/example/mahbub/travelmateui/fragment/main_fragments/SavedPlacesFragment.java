@@ -1,4 +1,4 @@
-package com.example.mahbub.travelmateui.fragment;
+package com.example.mahbub.travelmateui.fragment.main_fragments;
 
 import android.support.v4.app.Fragment;
 

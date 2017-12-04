@@ -1,10 +1,7 @@
-package com.example.mahbub.travelmateui.fragment;
+package com.example.mahbub.travelmateui.fragment.main_fragments;
 
 
 
-import android.animation.StateListAnimator;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapterMain;
 import com.example.mahbub.travelmateui.inrface.OnBackPressListener;

@@ -5,11 +5,8 @@ package com.example.mahbub.travelmateui.adapter;
  */
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +14,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.mahbub.travelmateui.MainActivity;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.ShowSelectedPlaceActivity;
-import com.example.mahbub.travelmateui.fragment.RootFragment;
-import com.example.mahbub.travelmateui.fragment.ShowSelectedPlaceFragment;
 import com.example.mahbub.travelmateui.model.PopularPlacesModel;
 
 import java.util.ArrayList;

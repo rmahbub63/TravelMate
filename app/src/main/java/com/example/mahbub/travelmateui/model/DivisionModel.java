@@ -8,6 +8,14 @@ public class DivisionModel {
     private int picId;
     private String divisionName;
 
+    public DivisionModel(){
+
+    }
+
+    public DivisionModel(String divisionName){
+        this.divisionName = divisionName;
+    }
+
     public DivisionModel(int picId, String divisionName) {
         this.picId = picId;
         this.divisionName = divisionName;
@@ -29,4 +37,8 @@ public class DivisionModel {
         this.divisionName = divisionName;
     }
 
+    @Override
+    public String toString() {
+        return divisionName;
+    }
 }

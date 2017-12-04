@@ -1,4 +1,4 @@
-package com.example.mahbub.travelmateui.fragment;
+package com.example.mahbub.travelmateui.fragment.explore_places_fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
