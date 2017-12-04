@@ -23,53 +23,163 @@
             style="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
 
-    <RadioButton
-        android:id="@+id/radio_pirates"
+    <LinearLayout
         android:layout_below="@+id/linear_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="30dp"
-        android:text="pirates"
-        android:layout_marginLeft="40dp"
-        style="@style/Base.TextAppearance.AppCompat.Medium"
-       />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        >
 
-    <RadioButton
-        android:id="@+id/radio_ninjas"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_alignBaseline="@+id/radio_pirates"
-        android:layout_alignBottom="@+id/radio_pirates"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:text="ninjas"
-        style="@style/Base.TextAppearance.AppCompat.Medium"/>
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-    <RadioButton
-        android:id="@+id/radioHistorical"
-        style="@style/Base.TextAppearance.AppCompat.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radio_pirates"
-        android:layout_alignStart="@+id/radio_pirates"
-        android:layout_below="@+id/radio_pirates"
-        android:layout_marginTop="41dp"
-        android:text="Historical"
-        android:textSize="25sp" />
+        <RadioButton
+            android:id="@+id/buttonCulturalEvent"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Cultural"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:minHeight="80dp"
+            />
 
-    <RadioButton
-        android:id="@+id/radioNatural"
-        style="@style/Base.TextAppearance.AppCompat.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/radioHistorical"
-        android:layout_alignBottom="@+id/radioHistorical"
-        android:layout_alignLeft="@+id/radio_ninjas"
-        android:layout_alignStart="@+id/radio_ninjas"
-        android:text="Natural"
-        android:textSize="25sp" />
+        <RadioButton
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonHistorical"
+            android:text="Historical"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:minHeight="80dp"
+            />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/buttonMuseum"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Museum"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonNatural"
+                android:text="Natural"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/buttonReliguous"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Religious"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonEntertainment"
+                android:text="Park"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/buttonTBA"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="TBA"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+            <RadioButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttoTBA"
+                android:text="TBA"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonNext"
+                android:text="NEXT"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:minHeight="80dp"
+                />
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
