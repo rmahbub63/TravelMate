@@ -43,9 +43,9 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
-    }
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        finish();
+//    }
 }
