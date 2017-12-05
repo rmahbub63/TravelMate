@@ -1,8 +1,8 @@
 package com.example.mahbub.travelmateui;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.example.mahbub.travelmateui.fragment.main_fragments.MainHelperFragment;
 
@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // finish all activity when user click in logout
+        if (getIntent().getBooleanExtra("EXITALL", false)) {
+            finish();
+        }
 
         if (savedInstanceState == null) {
             // withholding the previously created fragment from being created again
@@ -40,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Only Activity has this special callback method
      * Fragment doesn't have any onBackPressed callback
-     *
+     * <p>
      * Logic:
      * Each time when the back button is pressed, this Activity will propagate the call to the
      * container Fragment and that Fragment will propagate the call to its each tab Fragment
      * those Fragments will propagate this method call to their child Fragments and
      * eventually all the propagated calls will get back to this initial method
-     *
+     * <p>
      * If the container Fragment or any of its Tab Fragments and/or Tab child Fragments couldn't
      * handle the onBackPressed propagated call then this Activity will handle the callback itself
      */

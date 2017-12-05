@@ -20,42 +20,46 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingLeft="1dp"
-            android:paddingRight="1dp"
-            android:gravity="bottom">
+            android:padding="5dp"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/full_image"
-                android:layout_width="180dp"
+                android:layout_width="150dp"
                 android:layout_height="80dp"
-                android:src="@drawable/tour_plan_logo"
+                android:src="@drawable/sajek"
+                android:layout_gravity="fill"
                 />
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:gravity="bottom"
                 >
                 <TextView
                     android:id="@+id/textViewPlaceName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:text="Place name"/>
 
                 <TextView
                     android:id="@+id/textViewLocation"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                     android:text="Location"/>
                 <TextView
                     android:id="@+id/textViewTourDate"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
                     android:layout_height="wrap_content"
-                    android:text="Tour Date"
-                    />
+                    android:text="Tour Date"/>
 
             </LinearLayout>
 

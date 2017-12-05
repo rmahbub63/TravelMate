@@ -77,8 +77,8 @@ public class MainHelperFragment extends Fragment {
         viewPagerAdapterMain = new ViewPagerAdapterMain(getChildFragmentManager());
         viewPagerAdapterMain.addFragment (new HomeFragment(),"Home");
         viewPagerAdapterMain.addFragment(new MyPlansFragment(),"My Plans");
-        viewPagerAdapterMain.addFragment(new SavedPlacesFragment(),"Favourites");
-        viewPagerAdapterMain.addFragment(new MeProfileFragment(),"My Profile");
+        viewPagerAdapterMain.addFragment(new FavouritePlacesFragment(),"Favourites");
+        viewPagerAdapterMain.addFragment(new MyProfileFragment(),"My Profile");
         viewPager.setAdapter(viewPagerAdapterMain);
     }
 

@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
-import com.example.mahbub.travelmateui.fragment.main_fragments.MeProfileFragment;
+import com.example.mahbub.travelmateui.fragment.main_fragments.FavouritePlacesFragment;
 import com.example.mahbub.travelmateui.fragment.main_fragments.MyPlansFragment;
-import com.example.mahbub.travelmateui.fragment.main_fragments.SavedPlacesFragment;
 import com.example.mahbub.travelmateui.fragment.ShowSelectedPlaceFragment;
+import com.example.mahbub.travelmateui.fragment.main_fragments.MyProfileFragment;
 
 public class ShowSelectedPlaceActivity extends AppCompatActivity {
 
@@ -39,8 +39,8 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment (new ShowSelectedPlaceFragment(),"Home");
         adapter.addFragment(new MyPlansFragment(),"My Plans");
-        adapter.addFragment(new SavedPlacesFragment(),"Saved Place");
-        adapter.addFragment(new MeProfileFragment(),"My Profile");
+        adapter.addFragment(new FavouritePlacesFragment(),"Saved Place");
+        adapter.addFragment(new MyProfileFragment(),"My Profile");
         viewPager.setAdapter(adapter);
     }
 
@@ -97,5 +97,11 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

@@ -8,6 +8,6 @@ public class MyTourPlanNext extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_tour_plan_next);
+        setContentView(R.layout.activity_my_tour_plan);
     }
 }

@@ -20,7 +20,7 @@ public class MyTourPlanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_tour_list);
+        setContentView(R.layout.fragment_my_plans);
 
         myTourLists = new ArrayList<>();
         myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.tour_plan_logo));
