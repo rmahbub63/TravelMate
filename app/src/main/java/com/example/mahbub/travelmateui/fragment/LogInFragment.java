@@ -42,6 +42,7 @@ public class LogInFragment extends  Fragment {
         editTextPassword = mainView.findViewById(R.id.editTextPassword);
         buttonLogin = mainView.findViewById(R.id.button_login);
 
+        // Comment out should be removed
 //        buttonLogin.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
