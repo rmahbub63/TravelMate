@@ -47,8 +47,9 @@ public class PopularPlaceListAdapter extends
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String placeID = popularList.get(position).getPlaceId();
                 Intent intent = new Intent(context, ShowSelectedPlaceActivity.class);
-                intent.putExtra("place_name", popularList.get(position).getPlaceName());
+                intent.putExtra("place_id", placeID);
                 context.startActivity(intent);
             }
         });

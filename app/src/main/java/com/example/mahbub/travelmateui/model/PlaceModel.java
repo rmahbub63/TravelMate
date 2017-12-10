@@ -10,40 +10,29 @@ import java.util.List;
 
 public class PlaceModel {
 
+    String placeId;
     String placeName;
+    String placeDivision;
+    String placeDistrict;
     List<String> category;
     List<String> tags;
     Double rating;
     String overView;
     String wayToGo;
     String rangeOfCost;
-    List<Image> images;
     String specialFood;
     String accommodation;
     String caution;
     List<String> reviews;
+    List<Image> images;
 
-    public PlaceModel() {
+    public String getPlaceId() {
+        return placeId;
     }
 
-    public PlaceModel(String placeName, List<String> category, List<String> tags, Double rating,
-                      String overView, String wayToGo, String rangeOfCost, List<Image> images,
-                      String specialFood, String accommodation, String caution, List<String> reviews) {
-        this.placeName = placeName;
-        this.category = category;
-        this.tags = tags;
-        this.rating = rating;
-        this.overView = overView;
-        this.wayToGo = wayToGo;
-        this.rangeOfCost = rangeOfCost;
-        this.images = images;
-        this.specialFood = specialFood;
-        this.accommodation = accommodation;
-        this.caution = caution;
-        this.reviews = reviews;
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
     }
-
-
 
     public String getPlaceName() {
         return placeName;
@@ -51,6 +40,22 @@ public class PlaceModel {
 
     public void setPlaceName(String placeName) {
         this.placeName = placeName;
+    }
+
+    public String getPlaceDivision() {
+        return placeDivision;
+    }
+
+    public void setPlaceDivision(String placeDivision) {
+        this.placeDivision = placeDivision;
+    }
+
+    public String getPlaceDistrict() {
+        return placeDistrict;
+    }
+
+    public void setPlaceDistrict(String placeDistrict) {
+        this.placeDistrict = placeDistrict;
     }
 
     public List<String> getCategory() {
@@ -101,14 +106,6 @@ public class PlaceModel {
         this.rangeOfCost = rangeOfCost;
     }
 
-    public List<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(List<Image> images) {
-        this.images = images;
-    }
-
     public String getSpecialFood() {
         return specialFood;
     }
@@ -139,5 +136,13 @@ public class PlaceModel {
 
     public void setReviews(List<String> reviews) {
         this.reviews = reviews;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 }

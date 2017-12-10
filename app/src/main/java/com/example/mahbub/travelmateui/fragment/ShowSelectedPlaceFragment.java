@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.ShowSelectedPlaceActivity;
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
+import com.example.mahbub.travelmateui.controller.PlaceController;
 import com.example.mahbub.travelmateui.fragment.main_fragments.RootFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.AcomodationFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.BestSeasonFragment;
@@ -22,6 +23,7 @@ import com.example.mahbub.travelmateui.fragment.selected_place_fragments.ImageFr
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.OverviewFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.RangeOfCostFragment;
 import com.example.mahbub.travelmateui.fragment.selected_place_fragments.WayToGoFragment;
+import com.example.mahbub.travelmateui.model.PlaceModel;
 
 /**
  * Created by MAHBUB on 01-Dec-17.
@@ -33,14 +35,19 @@ public class ShowSelectedPlaceFragment extends RootFragment {
     TabLayout tabLayout;
     ViewPager viewPager;
 
+    public PlaceModel placeModel;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View mainView = inflater.inflate(R.layout.fragment_selected_place, null);
-
         toolbar = mainView.findViewById(R.id.toolbar);
+
+        // to get the user selected place place
+        getCurrentPlace(ShowSelectedPlaceActivity.placeId);
+
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
-        activity.getSupportActionBar().setTitle(ShowSelectedPlaceActivity.placeName);
+        activity.getSupportActionBar().setTitle(placeModel.getPlaceName());
 
         toolbar.setNavigationIcon(R.drawable.back_arrow);
 
@@ -72,6 +79,12 @@ public class ShowSelectedPlaceFragment extends RootFragment {
         viewPager = mainView.findViewById(R.id.viewPager_main);
 
         return mainView;
+    }
+
+    private void getCurrentPlace(String placeId) {
+
+        PlaceController placeController = new PlaceController(getContext());
+        placeModel = placeController.getPlaceModelById(placeId);
     }
 
     @Override

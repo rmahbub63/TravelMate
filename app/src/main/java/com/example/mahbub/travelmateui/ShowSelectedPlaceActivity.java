@@ -18,7 +18,7 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
 
-    public static String placeName;
+    public static String placeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout_main);
         viewPager = findViewById(R.id.viewPager_main);
 
-        placeName = getIntent().getStringExtra("place_name");
+        placeId = getIntent().getStringExtra("place_id");
 
         setDataToViewPager();
         tabLayout.setupWithViewPager(viewPager);

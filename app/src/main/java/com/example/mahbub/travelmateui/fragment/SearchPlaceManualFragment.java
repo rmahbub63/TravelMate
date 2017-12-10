@@ -36,10 +36,10 @@ public class SearchPlaceManualFragment extends RootFragment {
         popularList = new ArrayList<>();
         newList = new ArrayList<>();
 
-        popularList.add(new PopularPlacesModel(R.drawable.sajek, "Sajek Valley", 4.9f, "220 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.coxs_bazar, "Cox's Bazar Sea Beach", 4.8f, "120 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.jaflong, "Jaflong", 4.78f, "200 Review"));
-        popularList.add(new PopularPlacesModel(R.drawable.lalbag_kella, "Lalbag Kella", 4.6f, "210 Review"));
+        popularList.add(new PopularPlacesModel("-L007Uu0pTG7LAsOax9R", R.drawable.sajek, "Sajek Valley", 4.9f, "220 Review"));
+        popularList.add(new PopularPlacesModel("-L007Uu0pTG7LAsOax9R", R.drawable.coxs_bazar, "Cox's Bazar Sea Beach", 4.8f, "120 Review"));
+        popularList.add(new PopularPlacesModel("-L007Uu0pTG7LAsOax9R", R.drawable.jaflong, "Jaflong", 4.78f, "200 Review"));
+        popularList.add(new PopularPlacesModel("-L007Uu0pTG7LAsOax9R", R.drawable.lalbag_kella, "Lalbag Kella", 4.6f, "210 Review"));
 
         newList.add(new NewPlacesModel(R.drawable.moinot_ghat, "Moinot Ghat", 4.5f, "5 Review"));
         newList.add(new NewPlacesModel(R.drawable.napittachara_jhorna, "Napittachara Jhorna", 4.5f, "3 Review"));

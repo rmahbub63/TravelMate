@@ -3,20 +3,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.example.mahbub.travelmateui.AddPlaceAdmin">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Place Name:" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name:" />
 
+            <EditText
+                android:id="@+id/editText_addPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="a name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="put comma" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Division:" />
+
+            <Spinner
+                android:id="@+id/divisionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="District" />
+
+            <Spinner
+                android:id="@+id/districtSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tags" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="put comma" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rating:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="rating is double value" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="full" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Way to go:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceWayToGo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="way to go" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Range of cost:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceRangeOfCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="range of cost is description" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Special Food:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceSpecialFood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="all food names by separate comma" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accommodation:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceAccommodation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="details" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Caution:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceCaution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Caution" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Review:" />
+
+            <EditText
+                android:id="@+id/editText_addPlaceReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Review" />
+            <Button
+                android:id="@+id/button_save_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Place"/>
+
+        </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

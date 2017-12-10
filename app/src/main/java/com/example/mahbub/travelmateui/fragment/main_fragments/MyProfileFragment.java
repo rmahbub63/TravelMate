@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.mahbub.travelmateui.AddPlaceAdmin;
 import com.example.mahbub.travelmateui.LoginRegistrationActivity;
 import com.example.mahbub.travelmateui.MainActivity;
 import com.example.mahbub.travelmateui.R;
@@ -86,8 +87,16 @@ public class MyProfileFragment extends RootFragment {
             }
         });
 
+        buttonAddPlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), AddPlaceAdmin.class));
+            }
+        });
+
         return mainView;
     }
+
 
     private void setDataInUI() {
         //getting the current user
