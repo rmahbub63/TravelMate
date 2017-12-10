@@ -42,6 +42,15 @@ public class MyProfileFragment extends RootFragment {
         if (myAuth.getCurrentUser() != null){
             if (myAuth.getCurrentUser().getEmail().equals("admin@admin.com")){
                 mainView = inflater.inflate(R.layout.fragment_admin_main, null);
+                // ADMIN part start
+                buttonAddPlace = mainView.findViewById(R.id.button_Add_place);
+                buttonAddPlace.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(getContext(), AddPlaceAdmin.class));
+                    }
+                });
+                // Admin Part end
             } else {
                 mainView = inflater.inflate(R.layout.fragment_my_profile_main, null);
             }
@@ -50,18 +59,6 @@ public class MyProfileFragment extends RootFragment {
         textViewEmail = mainView.findViewById(R.id.textView_Email);
         buttonLogout = mainView.findViewById(R.id.button_logout);
         imageView = mainView.findViewById(R.id.imageView_picture);
-
-        // ADMIN part start
-        buttonAddPlace = mainView.findViewById(R.id.button_Add_place);
-
-        buttonAddPlace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        // Admin Part end
-
 
         setDataInUI();
 
@@ -86,14 +83,6 @@ public class MyProfileFragment extends RootFragment {
                 startActivity(new Intent(getContext(), LoginRegistrationActivity.class));
             }
         });
-
-        buttonAddPlace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), AddPlaceAdmin.class));
-            }
-        });
-
         return mainView;
     }
 
