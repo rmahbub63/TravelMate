@@ -8,12 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.mahbub.travelmateui.controller.PlaceController;
 import com.example.mahbub.travelmateui.model.DivisionModel;
 import com.example.mahbub.travelmateui.model.PlaceModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AddPlaceAdmin extends AppCompatActivity {
@@ -49,21 +51,35 @@ public class AddPlaceAdmin extends AppCompatActivity {
 
         setSpinnerData();
 
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PlaceModel placeModel = new PlaceModel();
-                placeModel.setPlaceName(editTextPlaceName.getText().toString().trim());
-                placeModel.setPlaceDivision(spinnerDivision.getSelectedItem().toString());
-                placeModel.setPlaceDistrict(spinnerDistrict.getSelectedItem().toString());
-                placeModel.setOverView(editTextOverView.getText().toString().trim());
+        if(editTextPlaceName != null && spinnerDistrict != null && spinnerDivision != null && editTextCategories != null && editTextTags != null) {
+            buttonSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PlaceModel placeModel = new PlaceModel();
+                    placeModel.setPlaceName(editTextPlaceName.getText().toString().trim());
+                    placeModel.setPlaceDivision(spinnerDivision.getSelectedItem().toString());
+                    placeModel.setPlaceDistrict(spinnerDistrict.getSelectedItem().toString());
+                    placeModel.setCategory(Arrays.asList(editTextCategories.getText().toString().trim().split(",")));
+                    placeModel.setTags(Arrays.asList(editTextTags.getText().toString().trim().split(",")));
+                    placeModel.setRating(Double.parseDouble(editTextRating.getText().toString().trim()));
+                    placeModel.setOverView(editTextOverView.getText().toString().trim());
+                    placeModel.setWayToGo(editTextWayToGo.getText().toString().trim());
+                    placeModel.setRangeOfCost(editTextRangeOfCost.getText().toString().trim());
+                    placeModel.setSpecialFood(editTextSpecialFood.getText().toString().trim());
+                    placeModel.setAccommodation(editTextAccommodation.getText().toString().trim());
+                    placeModel.setCaution(editTextCaution.getText().toString().trim());
+                    placeModel.setReviews(Arrays.asList(editTextReviews.getText().toString().trim().split(",")));
 
-                PlaceController placeController = new PlaceController(AddPlaceAdmin.this);
-                placeController.savePlace(placeModel);
 
+                    PlaceController placeController = new PlaceController(AddPlaceAdmin.this);
+                    placeController.savePlace(placeModel);
 
-            }
-        });
+                }
+            });
+        }
+        else{
+             Toast.makeText(AddPlaceAdmin.this,"Enter proper data",Toast.LENGTH_LONG).show();
+        }
     }
 
     public void setSpinnerData(){

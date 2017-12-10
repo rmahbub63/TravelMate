@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "510411138370-jhplfkkgmoc8t049iuj3a8v8h5il1nat.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mahbub.travelmateui",
+            "certificate_hash": "c0ef82f5decd5281be653dd2d49a307af7236dbd"
+          }
+        },
+        {
           "client_id": "510411138370-vigqktiud3af04shhb6v9gu78kii39ck.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
