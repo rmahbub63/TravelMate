@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "510411138370",
+    "firebase_url": "https://travelmateui.firebaseio.com",
+    "project_id": "travelmateui",
+    "storage_bucket": "travelmateui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510411138370:android:6d22859a01877c55",
+        "android_client_info": {
+          "package_name": "com.example.mahbub.travelmateui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510411138370-vigqktiud3af04shhb6v9gu78kii39ck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mahbub.travelmateui",
+            "certificate_hash": "8beac397048166f60750532c3768e44ea0a7a333"
+          }
+        },
+        {
+          "client_id": "510411138370-4i5nvgbsnddqhoj3874uknbf7q1v40b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPp_2zKFa3SwW0-i9q3722Ch9tlJIacCE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510411138370-4i5nvgbsnddqhoj3874uknbf7q1v40b6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

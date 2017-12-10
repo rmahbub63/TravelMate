@@ -1,6 +1,6 @@
 package com.example.mahbub.travelmateui.fragment;
 
-import android.app.ProgressDialog;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.RequestQueue;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.controller.UserController;
 import com.example.mahbub.travelmateui.model.UserModel;
@@ -21,14 +20,12 @@ import com.example.mahbub.travelmateui.model.UserModel;
 public class SignUpFragment extends Fragment {
 
     private Button buttonSignup, buttonGuest;
-    private EditText editTextName, editTextEmail, editTextPassword;
+    private EditText editTextEmail, editTextPassword;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View mainView = inflater.inflate(R.layout.fragment_signup_login_registration, container, false);
 
-
-        editTextName = mainView.findViewById(R.id.editTextName);
         editTextEmail = mainView.findViewById(R.id.editTextEmail);
         editTextPassword = mainView.findViewById(R.id.editTextPassword);
         buttonSignup = mainView.findViewById(R.id.buttonSignup);
@@ -39,12 +36,13 @@ public class SignUpFragment extends Fragment {
             public void onClick(View view) {
 
                 if (formValidation()) {
+
                     UserModel userModel = new UserModel();
-                    userModel.setId(0);
-                    userModel.setName(editTextName.getText().toString().trim());
+                    userModel.setId("");
                     userModel.setEmail(editTextEmail.getText().toString().trim());
                     userModel.setPassword(editTextPassword.getText().toString().trim());
 
+                    // To authenticate the user in firebase
                     UserController userController = new UserController(getContext());
                     userController.userRegistration(userModel);
                 }
@@ -56,26 +54,11 @@ public class SignUpFragment extends Fragment {
 
     public boolean formValidation() {
         boolean value = false;
-        if (isUserNameValid() && isPasswordValid() && isEmailValid()) {
+        if (isPasswordValid() && isEmailValid()) {
             value = true;
         }
 //        Toast.makeText(MainActivity.this, "Return value in formValidation " + value, Toast.LENGTH_LONG).show();
         return value;
-    }
-
-    public boolean isUserNameValid() {
-        String userName = editTextName.getText().toString().trim();
-        if (userName.isEmpty()) {
-            editTextName.setError("Please insert username");
-            return false;
-        } else if (userName.length() < 3 || userName.length() > 50) {
-            editTextName.setError("Please insert valid username");
-            return false;
-        } else if (userName.contains(" ")) {
-            editTextName.setError("Username should not contain any space");
-            return false;
-        }
-        return true;
     }
 
     public boolean isPasswordValid() {

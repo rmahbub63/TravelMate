@@ -39,7 +39,7 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment (new ShowSelectedPlaceFragment(),"Home");
         adapter.addFragment(new MyPlansFragment(),"My Plans");
-        adapter.addFragment(new FavouritePlacesFragment(),"Saved Place");
+        adapter.addFragment(new FavouritePlacesFragment(),"Saved PlaceModel");
         adapter.addFragment(new MyProfileFragment(),"My Profile");
         viewPager.setAdapter(adapter);
     }
@@ -97,11 +97,5 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
     }
 }

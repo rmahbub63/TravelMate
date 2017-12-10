@@ -3,6 +3,7 @@ package com.example.mahbub.travelmateui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,24 +43,27 @@ public class LogInFragment extends  Fragment {
         editTextPassword = mainView.findViewById(R.id.editTextPassword);
         buttonLogin = mainView.findViewById(R.id.button_login);
 
-//        buttonLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // check whether user input value
-//                if(formValidation()){
-//                    // create an object of UserModel
-//                    UserModel userModel = new UserModel();
-//
-//                    // getting the values from UI and set in model
-//                    userModel.setEmail(editTextEmail.getText().toString().trim());
-//                    userModel.setPassword(editTextPassword.getText().toString().trim());
-//
-//                    //crete an object of UserController and invoke it's userLogin method
-//                    UserController userController = new UserController(getContext());
-//                    userController.userLogin(userModel);
-//                }
-//            }
-//        });
+        // For test purpose
+        editTextEmail.setText("admin@admin.com");
+        editTextPassword.setText("123321123");
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // check whether user input value
+                if(formValidation()){
+                    // create an object of UserModel
+                    UserModel userModel = new UserModel();
+
+                    // getting the values from UI and set in model
+                    userModel.setEmail(editTextEmail.getText().toString().trim());
+                    userModel.setPassword(editTextPassword.getText().toString().trim());
+
+                    UserController userController = new UserController(getContext());
+                    userController.userLogin(userModel);
+                }
+            }
+        });
 
 
         //facebook login
@@ -69,11 +73,15 @@ public class LogInFragment extends  Fragment {
         buttonFbLogin.registerCallback(LoginRegistrationActivity.callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                // App code
-                Log.i("Information", "Success");
+
                 Toast.makeText(getContext(),"Success",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getContext(),ShowSelectedPlaceActivity.class);
-                startActivity(intent);
+
+                // call MainActivity
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                // Remove all other activity
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                getContext().startActivity(intent);
+                getActivity().finish();
             }
             @Override
             public void onCancel() {

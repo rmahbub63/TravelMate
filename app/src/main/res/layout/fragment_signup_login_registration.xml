@@ -8,15 +8,6 @@
         android:layout_height="50dp"
         />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imageViewName"
-        android:hint="Enter your display name"
-        android:inputType="text"
-        android:layout_alignBottom="@+id/imageViewName"/>
-
     <ImageView
         android:id="@+id/imageViewEmail"
         android:layout_width="50dp"
@@ -53,7 +44,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:onClick="saveData"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/editTextPassword"

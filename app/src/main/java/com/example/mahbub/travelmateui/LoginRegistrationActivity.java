@@ -1,10 +1,10 @@
 package com.example.mahbub.travelmateui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
 import com.example.mahbub.travelmateui.fragment.LogInFragment;
@@ -12,15 +12,15 @@ import com.example.mahbub.travelmateui.fragment.SignUpFragment;
 import com.facebook.CallbackManager;
 
 public class LoginRegistrationActivity extends AppCompatActivity {
+    public static CallbackManager callbackManager;
     TabLayout tabLayout;
     ViewPager viewPager;
-    public static CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_registration_login_registration);
-        
+
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewPager);
 
@@ -32,8 +32,8 @@ public class LoginRegistrationActivity extends AppCompatActivity {
 
     private void setDataToViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment (new LogInFragment(),"Log In");
-        adapter.addFragment(new SignUpFragment(),"Sign Up");
+        adapter.addFragment(new LogInFragment(), "Log In");
+        adapter.addFragment(new SignUpFragment(), "Sign Up");
         viewPager.setAdapter(adapter);
     }
 
@@ -42,10 +42,4 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
-
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        finish();
-//    }
 }

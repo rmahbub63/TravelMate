@@ -16,16 +16,14 @@
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
-
-
         <activity
             android:name=".LauncherSplashActivity"
             android:theme="@style/SplashTheme">
@@ -39,7 +37,21 @@
         <activity android:name=".ShowSelectedPlaceActivity" />
         <activity android:name=".MyTourPlan" />
         <activity android:name=".MyTourPlanNext" />
-        <activity android:name=".MyTourPlanActivity"/>
+        <activity android:name=".MyTourPlanActivity" />
+
+        <service android:name=".controller.MyTokenService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".controller.MyNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ProvideUserInfo" />
+        <activity android:name=".AddPlaceAdmin"></activity>
     </application>
 
 </manifest>

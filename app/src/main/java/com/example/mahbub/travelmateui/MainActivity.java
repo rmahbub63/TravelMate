@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // finish all activity when user click in logout
-        if (getIntent().getBooleanExtra("EXITALL", false)) {
+        if (getIntent().getBooleanExtra("EXIT_ALL", false)) {
             finish();
         }
 
