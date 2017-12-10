@@ -52,11 +52,13 @@ public class ProvideUserInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_provide_user_info);
 
+
         // Assigning Activity this to progress dialog.
         progressDialog = new ProgressDialog(this);
 
         editTextDisplayName = findViewById(R.id.editText_display_name);
         imageView = findViewById(R.id.imageView_picture);
+        imageView.setImageResource(R.drawable.image_add);
         buttonSave = findViewById(R.id.button_save);
 
         profileImageRef = FirebaseStorage.getInstance().getReference("profilepics/" + System.currentTimeMillis() + ".jpg");
@@ -94,10 +96,15 @@ public class ProvideUserInfo extends AppCompatActivity {
             // Showing progress dialog at user registration time.
             progressDialog.setMessage("Processing...");
             progressDialog.show();
-
-            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(displayName)
-                    .setPhotoUri(Uri.parse(profileImageUrl)).build();
+            UserProfileChangeRequest profileChangeRequest;
+            if (uriProfileImage == null){
+                profileChangeRequest = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(displayName).build();
+            } else {
+                profileChangeRequest = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(displayName)
+                        .setPhotoUri(Uri.parse(profileImageUrl)).build();
+            }
 
             user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override

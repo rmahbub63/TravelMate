@@ -19,8 +19,7 @@
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:background="@drawable/tour_plan_logo"/>
+        android:layout_margin="20dp"/>
 
     <EditText
         android:id="@+id/editText_display_name"

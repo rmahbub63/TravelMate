@@ -10,8 +10,7 @@
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:background="@drawable/tour_plan_logo"/>
+        android:layout_margin="20dp"/>
 
     <TextView
         android:layout_marginTop="10dp"
