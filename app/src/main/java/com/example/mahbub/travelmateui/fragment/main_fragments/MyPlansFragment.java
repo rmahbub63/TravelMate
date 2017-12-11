@@ -32,6 +32,13 @@ public class MyPlansFragment extends RootFragment {
         myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
         myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
         myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek11","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
 
 
         RecyclerView myTourList = mainView.findViewById(R.id.vertical_recycler_view);

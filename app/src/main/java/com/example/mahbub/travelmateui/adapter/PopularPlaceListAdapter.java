@@ -48,8 +48,10 @@ public class PopularPlaceListAdapter extends
             @Override
             public void onClick(View view) {
                 String placeID = popularList.get(position).getPlaceId();
+                String placeName = popularList.get(position).getPlaceName();
                 Intent intent = new Intent(context, ShowSelectedPlaceActivity.class);
                 intent.putExtra("place_id", placeID);
+                intent.putExtra("place_name", placeName);
                 context.startActivity(intent);
             }
         });
