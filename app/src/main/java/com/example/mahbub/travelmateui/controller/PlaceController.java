@@ -38,8 +38,8 @@ public class PlaceController {
         //getting a unique id using push().getKey() method
         //it will create a unique id and we will use it as the Primary Key for our Artist
         String id = placeReference.push().getKey();
-
         placeModel.setPlaceId(id);
+
         placeReference.child(id).setValue(placeModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

@@ -94,7 +94,10 @@ public class MyProfileFragment extends RootFragment {
         //setting the values
         if (user.getPhotoUrl() != null){
             String  photoUrl = user.getPhotoUrl().toString();
-            Glide.with(this).load(user.getPhotoUrl().toString()).into(imageView);
+            Glide
+                    .with(getContext())
+                    .load(user.getPhotoUrl()
+                            .toString()).into(imageView);
         }
 
         if (user.getDisplayName() != null){

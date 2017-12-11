@@ -171,13 +171,10 @@ public class ProvideUserInfo extends AppCompatActivity {
                 // Get the url from data
                 uriProfileImage = data.getData();
                 if (null != uriProfileImage) {
-                    // Get the path from the Uri
-                    String path = getPathFromURI(uriProfileImage);
-
                     // Set the image in ImageView
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriProfileImage);
-                        imageView.setImageBitmap(scaleDown(bitmap, 170, true));
+                        imageView.setImageBitmap(bitmap);
                         uploadImageToFirebase();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -185,31 +182,5 @@ public class ProvideUserInfo extends AppCompatActivity {
                 }
             }
         }
-    }
-
-    public Bitmap scaleDown(Bitmap realImage, float maxImageSize,
-                                   boolean filter) {
-        float ratio = Math.min(
-                (float) maxImageSize / realImage.getWidth(),
-                (float) maxImageSize / realImage.getHeight());
-        int width = Math.round((float) ratio * realImage.getWidth());
-        int height = Math.round((float) ratio * realImage.getHeight());
-
-        Bitmap newBitmap = Bitmap.createScaledBitmap(realImage, width,
-                height, filter);
-        return newBitmap;
-    }
-
-    /* Get the real path from the URI */
-    public String getPathFromURI(Uri contentUri) {
-        String res = null;
-        String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
-        if (cursor.moveToFirst()) {
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            res = cursor.getString(column_index);
-        }
-        cursor.close();
-        return res;
     }
 }

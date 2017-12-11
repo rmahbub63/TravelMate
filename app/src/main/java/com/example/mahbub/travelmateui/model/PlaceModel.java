@@ -23,6 +23,7 @@ public class PlaceModel {
     String specialFood;
     String accommodation;
     String caution;
+    String mainImageUri;
     List<String> reviews;
     List<Image> images;
 
@@ -128,6 +129,14 @@ public class PlaceModel {
 
     public void setCaution(String caution) {
         this.caution = caution;
+    }
+
+    public String getMainImageUri() {
+        return mainImageUri;
+    }
+
+    public void setMainImageUri(String mainImageUri) {
+        this.mainImageUri = mainImageUri;
     }
 
     public List<String> getReviews() {
