@@ -90,8 +90,11 @@ public class AddPlaceAdmin extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (uriProfileImage != null || editTextPlaceName != null && spinnerDistrict.getSelectedItem() != null
-                        && spinnerDivision.getSelectedItem() != null && editTextCategories != null && editTextTags != null) {
+                if (uriProfileImage == null || editTextPlaceName.getText().toString().isEmpty() || editTextCategories.getText().toString().isEmpty()
+                        || editTextWayToGo.getText().toString().isEmpty() || editTextRangeOfCost.getText().toString().isEmpty()
+                        || editTextTags.getText().toString().isEmpty() || editTextRating.getText().toString().isEmpty()) {
+                    Toast.makeText(AddPlaceAdmin.this, "Enter proper data", Toast.LENGTH_LONG).show();
+                } else {
                     PlaceModel placeModel = new PlaceModel();
                     placeModel.setMainImageUri(uriProfileImage.toString());
                     placeModel.setPlaceName(editTextPlaceName.getText().toString().trim());
@@ -110,8 +113,6 @@ public class AddPlaceAdmin extends AppCompatActivity {
 
                     PlaceController placeController = new PlaceController(AddPlaceAdmin.this);
                     placeController.savePlace(placeModel);
-                } else {
-                    Toast.makeText(AddPlaceAdmin.this, "Enter proper data", Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -96,42 +96,8 @@ public class ShowSelectedPlaceFragment extends RootFragment {
             }
         });
 
-        // get data from firebase
-        getPlaceModel();
-
         tabLayout = mainView.findViewById(R.id.tablayout_main);
         viewPager = mainView.findViewById(R.id.viewPager_main);
-
-        //
-        tabLayout.addTab(tabLayout.newTab().setText("Overview"));
-        tabLayout.addTab(tabLayout.newTab().setText("Way To Go"));
-
-        //
-        valueTV = new TextView(getContext());
-        valueTV.setTextSize(24);
-        valueTV.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        linearLayout.addView(valueTV);
-
-        final TextView newEdittext = new TextView(getContext());
-        newEdittext.setText("222222222222222222222222222 hallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo halla" +
-                "hallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo halla" +
-                "hallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo halla");
-        newEdittext.setTextSize(24);
-        newEdittext.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        linearLayout.addView(newEdittext);
-
-        TextView newEdittext3 = new TextView(getContext());
-        newEdittext3.setText("333333333333333333333 hallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo halla" +
-                "hallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo hallahallo halla");
-        newEdittext3.setTextSize(24);
-        newEdittext3.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        linearLayout.addView(newEdittext3);
 
         scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
@@ -139,15 +105,22 @@ public class ShowSelectedPlaceFragment extends RootFragment {
                 int scrollY = scrollView.getScrollY(); // For ScrollView
 //                Toast.makeText(getContext(), String.valueOf(textViewTwo.getTop()), Toast.LENGTH_SHORT).show();
 //                Log.i("CheckValue", "Text 2 = " + String.valueOf(newEdittext.getTop()) + " View Y = " + String.valueOf(scrollY));
-                if (newEdittext.getTop() < scrollY){
-//                    Log.i("CheckValue", "Gone");
-                    TabLayout.Tab tab = tabLayout.getTabAt(1);
-                    tab.select();
-                }
+//                if (newEdittext.getTop() < scrollY){
+////                    Log.i("CheckValue", "Gone");
+//                    TabLayout.Tab tab = tabLayout.getTabAt(1);
+//                    tab.select();
+//                }
             }
         });
 
         return mainView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // get data from firebase
+        getPlaceModel();
     }
 
     @Override
@@ -173,9 +146,7 @@ public class ShowSelectedPlaceFragment extends RootFragment {
 //                String placeName = dataSnapshot.child("placeName").getValue().toString();
                 PlaceModel placeModel = dataSnapshot.getValue(PlaceModel.class);
                 setDatainUI(placeModel);
-                Toast.makeText(getContext(), placeModel.getPlaceName(), Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // If cancelled
@@ -185,9 +156,40 @@ public class ShowSelectedPlaceFragment extends RootFragment {
     }
 
     public void setDatainUI(PlaceModel placeModel){
-        valueTV.setText(placeModel.getOverView());
+
+        if (placeModel != null && placeModel.getPlaceId() != null){
+            if (placeModel.getPlaceName() != null){
+                Toast.makeText(getContext(), placeModel.getPlaceName(), Toast.LENGTH_SHORT).show();
+            }
+            if (placeModel.getOverView() != null){
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Overview", placeModel.getOverView());
+            }
+            if (placeModel.getOverView() != null){
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Overview", placeModel.getOverView());
+            }
+        }
     }
 
+    public void addnewItemInlayout (TextView textView, String header, String textValue){
+        tabLayout.addTab(tabLayout.newTab().setText(header.toUpperCase()));
+
+        TextView headerTextView = new TextView(getContext());
+        headerTextView.setText(header + ":");
+        headerTextView.setTextSize(20);
+        headerTextView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        linearLayout.addView(headerTextView);
+
+        textView.setText(textValue);
+        textView.setTextSize(14);
+        textView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        linearLayout.addView(textView);
+    }
     private void setDataToViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new OverviewFragment(), " Overview");
