@@ -108,7 +108,6 @@ public class AddPlaceAdmin extends AppCompatActivity {
                     placeModel.setCaution(editTextCaution.getText().toString().trim());
                     placeModel.setReviews(Arrays.asList(editTextReviews.getText().toString().trim().split(",")));
 
-
                     PlaceController placeController = new PlaceController(AddPlaceAdmin.this);
                     placeController.savePlace(placeModel);
                 } else {
@@ -184,8 +183,8 @@ public class AddPlaceAdmin extends AppCompatActivity {
         divisions.add(new DivisionModel("Rangpur"));
         divisions.add(new DivisionModel("Sylhet"));
 
-        ArrayAdapter<DivisionModel> adapter = new ArrayAdapter<DivisionModel>(AddPlaceAdmin.this, R.layout.spinner_text, divisions);
-        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown);
+        ArrayAdapter<DivisionModel> adapter = new ArrayAdapter<DivisionModel>(AddPlaceAdmin.this, R.layout.support_simple_spinner_dropdown_item, divisions);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinnerDivision.setAdapter(adapter);
         spinnerDistrict.setAdapter(adapter);
     }
