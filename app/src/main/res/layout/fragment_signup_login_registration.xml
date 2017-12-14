@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="10dp">
 
-    <ImageView
-        android:id="@+id/imageViewName"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        />
 
     <ImageView
         android:id="@+id/imageViewEmail"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/imageViewName"/>
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/message"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -21,27 +17,33 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewEmail"
         android:hint="Enter email here"
+        android:layout_marginLeft="5dp"
         android:inputType="textEmailAddress"
         android:layout_alignBottom="@+id/imageViewEmail"/>
 
     <ImageView
         android:id="@+id/imageViewPassword"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
+        android:src="@drawable/pass_icon"
         android:layout_below="@+id/imageViewEmail"/>
+
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/imageViewEmail"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/editTextEmail"
         android:hint="Enter your password"
-        android:inputType="textEmailAddress"
+        android:layout_toRightOf="@+id/imageViewEmail"
+        android:inputType="textPassword"
         android:layout_alignBottom="@+id/imageViewPassword"/>
 
     <Button
         android:id="@+id/buttonSignup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:layout_marginTop="30dp"

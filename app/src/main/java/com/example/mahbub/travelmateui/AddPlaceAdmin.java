@@ -31,7 +31,6 @@ import java.util.Arrays;
 
 public class AddPlaceAdmin extends AppCompatActivity {
 
-    private StorageReference profileImageRef;
     private static final int CHOOSE_IMAGE = 111;
     EditText editTextPlaceName, editTextCategories, editTextTags,
             editTextRating, editTextOverView, editTextWayToGo, editTextRangeOfCost, editTextSpecialFood,
@@ -41,11 +40,10 @@ public class AddPlaceAdmin extends AppCompatActivity {
     ImageView imageView;
     String profileImageUrl;
     Uri uriProfileImage;
-
     ArrayList<DivisionModel> divisions;
-
     // Creating Progress dialog.
     ProgressDialog progressDialog;
+    private StorageReference profileImageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public class AddPlaceAdmin extends AppCompatActivity {
         // Assigning Activity this to progress dialog.
         progressDialog = new ProgressDialog(this);
 
-        profileImageRef = FirebaseStorage.getInstance().getReference("main_image/" + System.currentTimeMillis() + ".jpg");
+        profileImageRef = FirebaseStorage.getInstance().getReference("mainimage/" + System.currentTimeMillis() + ".jpg");
 
         imageView = findViewById(R.id.imageView_picture);
         imageView.setImageResource(R.drawable.image_add);
@@ -90,19 +88,27 @@ public class AddPlaceAdmin extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (uriProfileImage == null || editTextPlaceName.getText().toString().isEmpty() || editTextCategories.getText().toString().isEmpty()
+                if (profileImageUrl == null || editTextPlaceName.getText().toString().isEmpty() || editTextCategories.getText().toString().isEmpty()
                         || editTextWayToGo.getText().toString().isEmpty() || editTextRangeOfCost.getText().toString().isEmpty()
                         || editTextTags.getText().toString().isEmpty() || editTextRating.getText().toString().isEmpty()) {
                     Toast.makeText(AddPlaceAdmin.this, "Enter proper data", Toast.LENGTH_LONG).show();
                 } else {
                     PlaceModel placeModel = new PlaceModel();
-                    placeModel.setMainImageUri(uriProfileImage.toString());
+                    placeModel.setmainImageUrl(profileImageUrl);
                     placeModel.setPlaceName(editTextPlaceName.getText().toString().trim());
                     placeModel.setPlaceDivision(spinnerDivision.getSelectedItem().toString());
                     placeModel.setPlaceDistrict(spinnerDistrict.getSelectedItem().toString());
-                    placeModel.setCategory(Arrays.asList(editTextCategories.getText().toString().trim().split(",")));
-                    placeModel.setTags(Arrays.asList(editTextTags.getText().toString().trim().split(",")));
-                    placeModel.setRating(Double.parseDouble(editTextRating.getText().toString().trim()));
+                    String[] categories = editTextCategories.getText().toString().trim().split(",");
+                    for (int i = 0; i<categories.length; i++){
+                        categories[i] = categories[i].trim();
+                    }
+                    placeModel.setCategory(Arrays.asList(categories));
+                    String[] tags = editTextTags.getText().toString().trim().split(",");
+                    for (int i = 0; i<tags.length; i++){
+                        tags[i] = tags[i].trim();
+                    }
+                    placeModel.setTags(Arrays.asList(tags));
+                    placeModel.setRating(Float.valueOf(editTextRating.getText().toString().trim()));
                     placeModel.setOverView(editTextOverView.getText().toString().trim());
                     placeModel.setWayToGo(editTextWayToGo.getText().toString().trim());
                     placeModel.setRangeOfCost(editTextRangeOfCost.getText().toString().trim());
@@ -146,8 +152,8 @@ public class AddPlaceAdmin extends AppCompatActivity {
     }
 
     /* upload image to firebase storage */
-    public void uploadImageToFirebase(){
-        if(uriProfileImage != null){
+    public void uploadImageToFirebase() {
+        if (uriProfileImage != null) {
             // Showing progress dialog at user registration time.
             progressDialog.setMessage("Processing...");
             progressDialog.show();

@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.mahbub.travelmateui.controller.SharedPrefManager;
-import com.example.mahbub.travelmateui.model.LoginModel;
-import com.example.mahbub.travelmateui.model.UserModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -16,8 +13,6 @@ public class LauncherSplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // For offline data
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         //getting the current user
         FirebaseAuth myAuth = FirebaseAuth.getInstance();
@@ -35,5 +30,12 @@ public class LauncherSplashActivity extends AppCompatActivity {
         }
 
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // For offline data
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 }

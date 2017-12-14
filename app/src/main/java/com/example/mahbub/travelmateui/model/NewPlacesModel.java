@@ -5,16 +5,26 @@ package com.example.mahbub.travelmateui.model;
  */
 
 public class NewPlacesModel {
+    public String placeId;
     private int imageId;
     private String placeName;
     private float placeRating;
     private String noOfPlaceReview;
 
-    public NewPlacesModel(int imageId, String placeName, float placeRating, String noOfPlaceReview) {
+    public NewPlacesModel(String placeId, int imageId, String placeName, float placeRating, String noOfPlaceReview) {
+        this.placeId = placeId;
         this.imageId = imageId;
         this.placeName = placeName;
         this.placeRating = placeRating;
         this.noOfPlaceReview = noOfPlaceReview;
+    }
+
+    public String getPlaceId() {
+        return placeId;
+    }
+
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
     }
 
     public int getImageId() {

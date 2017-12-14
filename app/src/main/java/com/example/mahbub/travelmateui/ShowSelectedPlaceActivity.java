@@ -5,8 +5,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.mahbub.travelmateui.adapter.CustomViewPager;
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
 import com.example.mahbub.travelmateui.controller.PlaceController;
 import com.example.mahbub.travelmateui.fragment.main_fragments.FavouritePlacesFragment;
@@ -18,7 +21,7 @@ import com.example.mahbub.travelmateui.model.PlaceModel;
 public class ShowSelectedPlaceActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    ViewPager viewPager;
+    CustomViewPager viewPager;
 
     public static String placeId;
     public static String placeName;
@@ -36,6 +39,7 @@ public class ShowSelectedPlaceActivity extends AppCompatActivity {
 
         setDataToViewPager();
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setPagingEnabled(false);
         setupTabIcons();
     }
 

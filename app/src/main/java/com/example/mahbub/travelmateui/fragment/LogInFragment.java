@@ -44,8 +44,8 @@ public class LogInFragment extends  Fragment {
         buttonLogin = mainView.findViewById(R.id.button_login);
 
         // For test purpose
-        editTextEmail.setText("admin@admin.com");
-        editTextPassword.setText("123321123");
+//        editTextEmail.setText("admin@admin.com");
+//        editTextPassword.setText("123321123");
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override

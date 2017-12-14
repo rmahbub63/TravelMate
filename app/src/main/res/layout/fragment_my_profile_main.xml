@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     android:layout_margin="10dp">
 
     <ImageView
         android:id="@+id/imageView_picture"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
         android:layout_margin="20dp"/>
 
@@ -17,6 +18,7 @@
         android:id="@+id/textView_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textColor="@color/button_background"
         android:text="Hii">
     </TextView>
@@ -26,16 +28,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:textColor="@color/button_background"
         android:text="Hii">
     </TextView>
 
     <Button
+        android:id="@+id/button_settings"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/custom_text_color"
+        android:background="@color/button_background"
+        android:text="Settings">
+    </Button>
+
+    <Button
         android:id="@+id/button_logout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/custom_text_color"
         android:background="@color/button_background"
         android:text="LogOut">

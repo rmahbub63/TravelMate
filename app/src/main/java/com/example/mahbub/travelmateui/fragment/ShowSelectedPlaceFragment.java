@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -20,23 +19,13 @@ import android.widget.Toast;
 
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.ShowSelectedPlaceActivity;
-import com.example.mahbub.travelmateui.adapter.ViewPagerAdapter;
 import com.example.mahbub.travelmateui.fragment.main_fragments.RootFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.AcomodationFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.BestSeasonFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.CategoryFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.ImageFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.OverviewFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.RangeOfCostFragment;
-import com.example.mahbub.travelmateui.fragment.selected_place_fragments.WayToGoFragment;
 import com.example.mahbub.travelmateui.model.PlaceModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 /**
  * Created by MAHBUB on 01-Dec-17.
@@ -54,6 +43,8 @@ public class ShowSelectedPlaceFragment extends RootFragment {
 
     // For show data
     TextView valueTV;
+
+    int nextTop, prevTop;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -103,13 +94,35 @@ public class ShowSelectedPlaceFragment extends RootFragment {
             @Override
             public void onScrollChanged() {
                 int scrollY = scrollView.getScrollY(); // For ScrollView
-//                Toast.makeText(getContext(), String.valueOf(textViewTwo.getTop()), Toast.LENGTH_SHORT).show();
-//                Log.i("CheckValue", "Text 2 = " + String.valueOf(newEdittext.getTop()) + " View Y = " + String.valueOf(scrollY));
-//                if (newEdittext.getTop() < scrollY){
-////                    Log.i("CheckValue", "Gone");
-//                    TabLayout.Tab tab = tabLayout.getTabAt(1);
-//                    tab.select();
+                int count = linearLayout.getChildCount();
+                int currentTabPosition = tabLayout.getSelectedTabPosition();
+
+//                for (int i = 0; i<count; i++){
+//                    if (currentTabPosition == i) {
+//                        Log.i("CheckValue", "Called");
+//                        performAction(currentTabPosition, scrollY);
+//                    }
 //                }
+            }
+        });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab == tabLayout.getTabAt(5)){
+                    TextView v = (TextView) linearLayout.getChildAt(8);
+                    v.setFocusable(true);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
@@ -121,13 +134,6 @@ public class ShowSelectedPlaceFragment extends RootFragment {
         super.onStart();
         // get data from firebase
         getPlaceModel();
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-//        setDataToViewPager();
-//        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -143,10 +149,13 @@ public class ShowSelectedPlaceFragment extends RootFragment {
         getPlaceByIdReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                if(((LinearLayout) linearLayout).getChildCount() > 0)
+                    ((LinearLayout) linearLayout).removeAllViews();
 //                String placeName = dataSnapshot.child("placeName").getValue().toString();
                 PlaceModel placeModel = dataSnapshot.getValue(PlaceModel.class);
                 setDatainUI(placeModel);
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // If cancelled
@@ -155,24 +164,48 @@ public class ShowSelectedPlaceFragment extends RootFragment {
         });
     }
 
-    public void setDatainUI(PlaceModel placeModel){
+    public void setDatainUI(PlaceModel placeModel) {
 
-        if (placeModel != null && placeModel.getPlaceId() != null){
-            if (placeModel.getPlaceName() != null){
-                Toast.makeText(getContext(), placeModel.getPlaceName(), Toast.LENGTH_SHORT).show();
+        if (placeModel != null && placeModel.getPlaceId() != null) {
+            if (placeModel.getPlaceName() != null) {
+//                Toast.makeText(getContext(), placeModel.getPlaceName(), Toast.LENGTH_SHORT).show();
             }
-            if (placeModel.getOverView() != null){
+            if (placeModel.getOverView() != null) {
                 TextView newTextView = new TextView(getContext());
                 addnewItemInlayout(newTextView, "Overview", placeModel.getOverView());
             }
-            if (placeModel.getOverView() != null){
+            if (placeModel.getWayToGo() != null) {
                 TextView newTextView = new TextView(getContext());
-                addnewItemInlayout(newTextView, "Overview", placeModel.getOverView());
+                addnewItemInlayout(newTextView, "Way To Go", placeModel.getWayToGo());
+            }
+            if (placeModel.getRangeOfCost() != null) {
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Range of Cost", placeModel.getRangeOfCost());
+            }
+            if (placeModel.getAccommodation().length() != 0) {
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Accommodation", placeModel.getAccommodation());
+            }
+            if (placeModel.getSpecialFood().length() != 0) {
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Food", placeModel.getSpecialFood());
+            }
+            if (placeModel.getCaution().length() != 0) {
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Caution", placeModel.getCaution());
+            }
+            if (placeModel.getReviews().get(0).length() != 0) {
+                TextView newTextView = new TextView(getContext());
+                addnewItemInlayout(newTextView, "Reviews", "1. '" + placeModel.getReviews().get(0) + "'");
+                for (int i = 1; i < placeModel.getReviews().size(); i++){
+                    TextView newReviewTextView = new TextView(getContext());
+                    addReviews(newReviewTextView, (i +1) + ". '" + placeModel.getReviews().get(i)+ "'");
+                }
             }
         }
     }
 
-    public void addnewItemInlayout (TextView textView, String header, String textValue){
+    public void addnewItemInlayout(TextView textView, String header, String textValue) {
         tabLayout.addTab(tabLayout.newTab().setText(header.toUpperCase()));
 
         TextView headerTextView = new TextView(getContext());
@@ -190,15 +223,34 @@ public class ShowSelectedPlaceFragment extends RootFragment {
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         linearLayout.addView(textView);
     }
-    private void setDataToViewPager() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new OverviewFragment(), " Overview");
-        adapter.addFragment(new BestSeasonFragment(), " BestSeason");
-        adapter.addFragment(new RangeOfCostFragment(), " RangeOfCost");
-        adapter.addFragment(new WayToGoFragment(), " WayToGo");
-        adapter.addFragment(new ImageFragment(), " Image");
-        adapter.addFragment(new CategoryFragment(), " Category");
-        adapter.addFragment(new AcomodationFragment(), " AcomodationFragment");
-        viewPager.setAdapter(adapter);
+
+    public void addReviews(TextView textView, String textValue) {
+        textView.setText(textValue);
+        textView.setTextSize(14);
+        textView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        linearLayout.addView(textView);
+    }
+
+    public void performAction(int index, int scrollY) {
+        TextView v = null;
+        v = (TextView) linearLayout.getChildAt(index);
+        prevTop = v.getTop();
+        Log.i("CheckValue", v.getText().toString());
+        v = (TextView) linearLayout.getChildAt(index + 2);
+        nextTop = v.getTop();
+        Log.i("CheckValue", v.getText().toString());
+
+        if (prevTop < scrollY) {
+            Log.i("CheckValue", "Gone1");
+            TabLayout.Tab prevtab = tabLayout.getTabAt(index);
+            prevtab.select();
+        }
+        if (nextTop < scrollY) {
+            Log.i("CheckValue", "Gone2");
+            TabLayout.Tab nexttab = tabLayout.getTabAt(index + 1);
+            nexttab.select();
+        }
     }
 }

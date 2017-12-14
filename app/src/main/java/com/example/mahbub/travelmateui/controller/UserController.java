@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class UserController {
@@ -92,8 +93,8 @@ public class UserController {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     context.startActivity(intent);
                     ((AppCompatActivity)context).finish();
-
-                    Toast.makeText(context, "You are now sign in as " + userModel.getName() + ". You can logout from My Profile",
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Toast.makeText(context, "You are now sign in as " + user.getDisplayName() + ". You can logout from My Profile",
                             Toast.LENGTH_SHORT).show();
                 } else {
                     // If sign in fails, display a message to the user.

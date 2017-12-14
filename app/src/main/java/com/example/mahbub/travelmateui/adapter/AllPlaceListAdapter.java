@@ -14,21 +14,25 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.mahbub.travelmateui.R;
 import com.example.mahbub.travelmateui.ShowSelectedPlaceActivity;
+import com.example.mahbub.travelmateui.model.PlaceModel;
 import com.example.mahbub.travelmateui.model.PopularPlacesModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
-public class PopularPlaceListAdapter extends
-        RecyclerView.Adapter<PopularPlaceListAdapter.HorizontalViewHolderPopularPlace>{
+public class AllPlaceListAdapter extends
+        RecyclerView.Adapter<AllPlaceListAdapter.HorizontalViewHolderPopularPlace>{
 
     private Context context;
-    private ArrayList<PopularPlacesModel> popularList;
+    private ArrayList<PlaceModel> placeModels;
 
-    public PopularPlaceListAdapter(Context context, ArrayList<PopularPlacesModel> popularList) {
+    public AllPlaceListAdapter(Context context, ArrayList<PlaceModel> placeModels) {
         this.context = context;
-        this.popularList = popularList;
+        this.placeModels = placeModels;
     }
 
     @Override
@@ -40,15 +44,36 @@ public class PopularPlaceListAdapter extends
 
     @Override
     public void onBindViewHolder(HorizontalViewHolderPopularPlace holder, final int position) {
-        holder.placeImage.setImageResource(popularList.get(position).getImageId());
-        holder.placeName.setText(popularList.get(position).getPlaceName());
-        holder.placeRating.setRating(popularList.get(position).getPlaceRating());
-        holder.placeReview.setText(popularList.get(position).getNoOfPlaceReview());
+        //setting the values
+        FirebaseAuth myAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = myAuth.getCurrentUser();
+
+        //setting the values
+        if (placeModels.get(position).getmainImageUrl() != null){
+            String  photoUrl = placeModels.get(position).getmainImageUrl().toString();
+            Glide
+                    .with(context)
+                    .load(photoUrl).into(holder.placeImage);
+        }
+        holder.placeName.setText(placeModels.get(position).getPlaceName());
+        holder.placeRating.setRating(placeModels.get(position).getRating());
+        if(!placeModels.get(position).getReviews().isEmpty() && placeModels.get(position).getReviews() != null){
+            if (placeModels.get(position).getReviews().get(0).length()== 0){
+                holder.placeReview.setText("0 Reviews");
+            } else {
+                holder.placeReview.setText(placeModels.get(position).getReviews().size() + " Reviews");
+            }
+        } else {
+            holder.placeReview.setText("0 Reviews");
+        }
+
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String placeID = popularList.get(position).getPlaceId();
-                String placeName = popularList.get(position).getPlaceName();
+                String placeID = placeModels.get(position).getPlaceId();
+                String placeName = placeModels.get(position).getPlaceName();
+
                 Intent intent = new Intent(context, ShowSelectedPlaceActivity.class);
                 intent.putExtra("place_id", placeID);
                 intent.putExtra("place_name", placeName);
@@ -59,7 +84,7 @@ public class PopularPlaceListAdapter extends
 
     @Override
     public int getItemCount() {
-        return popularList.size();
+        return placeModels.size();
     }
 
     public class HorizontalViewHolderPopularPlace extends RecyclerView.ViewHolder {

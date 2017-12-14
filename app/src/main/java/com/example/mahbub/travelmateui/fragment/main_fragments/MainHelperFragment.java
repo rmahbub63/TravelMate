@@ -1,40 +1,39 @@
 package com.example.mahbub.travelmateui.fragment.main_fragments;
 
 
-
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mahbub.travelmateui.R;
+import com.example.mahbub.travelmateui.adapter.CustomViewPager;
 import com.example.mahbub.travelmateui.adapter.ViewPagerAdapterMain;
 import com.example.mahbub.travelmateui.inrface.OnBackPressListener;
 
 
 /**
  * A simple {@link Fragment} subclass.
- *
  */
 public class MainHelperFragment extends Fragment {
 
-    public MainHelperFragment(){
-
-    }
-
     /**
      * TabPagerIndicator
-     *
+     * <p>
      * Please refer to ViewPagerIndicator library
      */
     TabLayout tabLayout;
-    ViewPager viewPager;
-
+    CustomViewPager viewPager;
     private ViewPagerAdapterMain viewPagerAdapterMain;
+
+    public MainHelperFragment() {
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +43,9 @@ public class MainHelperFragment extends Fragment {
 
         tabLayout = rootView.findViewById(R.id.tablayout_main);
         viewPager = rootView.findViewById(R.id.viewPager_main);
+
+        viewPager.setPagingEnabled(false);
+
         return rootView;
     }
 
@@ -73,12 +75,13 @@ public class MainHelperFragment extends Fragment {
         // this Fragment couldn't handle the onBackPressed call
         return false;
     }
+
     private void setDataToViewPager() {
         viewPagerAdapterMain = new ViewPagerAdapterMain(getChildFragmentManager());
-        viewPagerAdapterMain.addFragment (new HomeFragment(),"Home");
-        viewPagerAdapterMain.addFragment(new MyPlansFragment(),"My Plans");
-        viewPagerAdapterMain.addFragment(new FavouritePlacesFragment(),"Favourites");
-        viewPagerAdapterMain.addFragment(new MyProfileFragment(),"My Profile");
+        viewPagerAdapterMain.addFragment(new HomeFragment(), "Home");
+        viewPagerAdapterMain.addFragment(new MyPlansFragment(), "My Plans");
+        viewPagerAdapterMain.addFragment(new FavouritePlacesFragment(), "Favourites");
+        viewPagerAdapterMain.addFragment(new MyProfileFragment(), "My Profile");
         viewPager.setAdapter(viewPagerAdapterMain);
     }
 
@@ -107,29 +110,30 @@ public class MainHelperFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if(tab == tabLayout.getTabAt(0)){
+                if (tab == tabLayout.getTabAt(0)) {
                     tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.home_filled, 0, 0);
-                } else if(tab == tabLayout.getTabAt(1)){
+                } else if (tab == tabLayout.getTabAt(1)) {
                     tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_plan_filled, 0, 0);
-                } else if(tab == tabLayout.getTabAt(2)){
+                } else if (tab == tabLayout.getTabAt(2)) {
                     tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.saved_place_filled, 0, 0);
-                } else if(tab == tabLayout.getTabAt(3)){
+                } else if (tab == tabLayout.getTabAt(3)) {
                     tabFour.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_profile_filled, 0, 0);
                 }
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                if(tab == tabLayout.getTabAt(0)){
+                if (tab == tabLayout.getTabAt(0)) {
                     tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.home_blank, 0, 0);
-                } else if(tab == tabLayout.getTabAt(1)){
+                } else if (tab == tabLayout.getTabAt(1)) {
                     tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_plan_blank, 0, 0);
-                } else if(tab == tabLayout.getTabAt(2)){
+                } else if (tab == tabLayout.getTabAt(2)) {
                     tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.saved_place_blank, 0, 0);
-                } else if(tab == tabLayout.getTabAt(3)){
+                } else if (tab == tabLayout.getTabAt(3)) {
                     tabFour.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.my_profile_blank, 0, 0);
                 }
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
 
         android:id="@+id/imageViewEmail"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="60dp"
+        android:src="@drawable/message"
         />
 
     <EditText
@@ -17,13 +20,15 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewEmail"
         android:hint="Enter email here"
+        android:layout_marginLeft="5dp"
         android:inputType="textEmailAddress"
         android:layout_alignBottom="@+id/imageViewEmail"/>
     <ImageView
         android:id="@+id/imageViewPassword"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
+        android:src="@drawable/pass_icon"
         android:layout_below="@+id/imageViewEmail"/>
 
     <EditText
@@ -33,10 +38,8 @@
         android:layout_toRightOf="@+id/imageViewPassword"
         android:hint="Enter password here"
         android:inputType="textPassword"
+        android:layout_marginLeft="5dp"
         android:layout_alignBottom="@+id/imageViewPassword"/>
-
-
-
 
     <Button
         android:id="@+id/button_login"

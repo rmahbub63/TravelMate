@@ -16,14 +16,14 @@ public class PlaceModel {
     String placeDistrict;
     List<String> category;
     List<String> tags;
-    Double rating;
+    float rating;
     String overView;
     String wayToGo;
     String rangeOfCost;
     String specialFood;
     String accommodation;
     String caution;
-    String mainImageUri;
+    String mainImageUrl;
     List<String> reviews;
     List<Image> images;
 
@@ -75,11 +75,11 @@ public class PlaceModel {
         this.tags = tags;
     }
 
-    public Double getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(Double rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 
@@ -131,12 +131,12 @@ public class PlaceModel {
         this.caution = caution;
     }
 
-    public String getMainImageUri() {
-        return mainImageUri;
+    public String getmainImageUrl() {
+        return mainImageUrl;
     }
 
-    public void setMainImageUri(String mainImageUri) {
-        this.mainImageUri = mainImageUri;
+    public void setmainImageUrl(String mainImageUrl) {
+        this.mainImageUrl = mainImageUrl;
     }
 
     public List<String> getReviews() {

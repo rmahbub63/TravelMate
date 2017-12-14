@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingLeft="1dp"
     android:paddingRight="1dp">
 
@@ -11,7 +11,7 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         card_view:cardCornerRadius="5dp"
         card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true">
@@ -19,12 +19,13 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:paddingTop="5dp"
             android:paddingLeft="1dp"
             android:paddingRight="1dp">
 
             <ImageView
-                android:id="@+id/full_image"
+                android:id="@+id/full_image_main"
                 android:layout_width="180dp"
                 android:layout_height="80dp"
                 android:src="@drawable/tour_plan_logo"
@@ -32,14 +33,14 @@
 
             <TextView
                 android:id="@+id/name_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:maxWidth="180dp"
-                android:layout_below="@id/full_image"
+                android:layout_below="@id/full_image_main"
                 android:textSize="15sp"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="1dp"
-                android:text="A Guide To Rocky Mountain Vacations"
+                android:text="A Guide To"
                 android:textColor="@color/cardview_dark_background"/>
 
 
@@ -60,7 +61,7 @@
                 android:layout_alignTop="@id/ratingBar"
                 android:textSize="15sp"
                 android:text="100 Reviews"
-                android:layout_alignRight="@id/full_image"
+                android:layout_alignRight="@id/full_image_main"
                 android:gravity="end" />
 
         </RelativeLayout>

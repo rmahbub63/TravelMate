@@ -26,19 +26,8 @@ public class MyPlansFragment extends RootFragment {
         View mainView = inflater.inflate(R.layout.fragment_my_plans, null);
 
         myTourLists = new ArrayList<>();
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek11","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek","Khagrachori","22/12/22",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Shajek Valley","Khagrachori","25/12/17",R.drawable.sajek));
+        myTourLists.add(new MyTourList("Jaflong","Sylhet","05/01/18",R.drawable.jaflong));
 
 
         RecyclerView myTourList = mainView.findViewById(R.id.vertical_recycler_view);

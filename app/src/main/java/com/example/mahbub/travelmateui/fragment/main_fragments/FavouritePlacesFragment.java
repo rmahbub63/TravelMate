@@ -25,15 +25,11 @@ public class FavouritePlacesFragment extends RootFragment{
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View mainView = inflater.inflate(R.layout.fragment_my_plans, null);
+        View mainView = inflater.inflate(R.layout.fragment_my_favourites, null);
 
         myTourLists = new ArrayList<>();
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
-        myTourLists.add(new MyTourList("Shajek", "Khagrachori", "22/12/22", R.drawable.sajek));
+        myTourLists.add(new MyTourList("Cox's Bazar Sea Beach", "Khagrachori", "Added on 12/12/17", R.drawable.coxs_bazar));
+        myTourLists.add(new MyTourList("Moinot Ghat", "Dohar", "Added on 13/12/17", R.drawable.moinot_ghat));
 
 
         RecyclerView myTourList = mainView.findViewById(R.id.vertical_recycler_view);
